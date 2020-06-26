@@ -1,4 +1,5 @@
-const keys = container.resolve('Storage').Keys;
+const {Storage} = require("../config");
+const keys = Storage.Keys;
 
 module.exports = {
     getShared_secret : function(key){

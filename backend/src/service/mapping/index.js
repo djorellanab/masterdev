@@ -1,5 +1,5 @@
 module.exports = {
     credentialMapping: require('./credential.mapping'),
-    messageMapping: require('./message.mappingr'),
+    messageMapping: require('./message.mapping'),
     tagMapping: require('./tag.mapping')
 };

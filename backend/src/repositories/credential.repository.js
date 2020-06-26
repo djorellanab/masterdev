@@ -1,4 +1,7 @@
-const Keys = container.resolve('Storage').Keys;
+const container = require('../container');
+
+const {Storage} = require("../config");
+const keys = Storage.Keys;
 
 class CredentialRepository {
     put(credential) {

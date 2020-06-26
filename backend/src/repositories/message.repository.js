@@ -1,6 +1,7 @@
 const uuid = require('uuid-random');
 
-const messages = container.resolve('Storage').Messages;
+const {Storage} = require("../config");
+const messages = Storage.Messages;
 
 class MessageRepository {
 

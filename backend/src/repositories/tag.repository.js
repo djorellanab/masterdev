@@ -1,6 +1,7 @@
 const uuid = require('uuid-random');
 
-const tags = container.resolve('Storage').Tags;
+const {Storage} = require("../config");
+const tags = Storage.Tags;
 
 class TagRepository {
 
