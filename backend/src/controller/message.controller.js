@@ -21,7 +21,7 @@ class MessageController {
       try {
         let message = await _messageService.getById(id);
         authenticationMiddleware.signature(res, shared_secret, JSON.stringify(message), `GET;message/${id}`);
-        return res.status(200).send({message:"ok"});
+        return res.status(200).send(message);
       } catch (error) {
         if(error.message === "NOTFOUND"){
           return res.status(404).send("Message did not found");
@@ -43,7 +43,7 @@ class MessageController {
       try {
         let messages = await _messageService.getAllByTag(tag);
         authenticationMiddleware.signature(res, shared_secret,  JSON.stringify(messages), `GET;message/tag/${tag}`);
-        return res.status(200).send({message:"ok"});
+        return res.status(200).send(messages);
       } catch (error) {
         console.log(error.message);
         return res.status(500).send(error.message);
@@ -60,7 +60,7 @@ class MessageController {
       try {
         let data = await  _messageService.post(req.body);
         authenticationMiddleware.signature(res, shared_secret, data.id.toString(), `POST;message`)
-        return res.status(200).send({message:"ok"});
+        return res.status(200).send(data);
       } catch (error) {
         if(error.message === "NOTFOUND")
         {
