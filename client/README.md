@@ -6,6 +6,7 @@
 
 ## Important Requirements
 - **Postman Desktop** 
+- **Run the backend** 
 
 ## Get Collections (endpoints)
 1. Install Postman Desktop in your computer
