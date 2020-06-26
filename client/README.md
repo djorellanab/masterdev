@@ -28,4 +28,4 @@
 2. Create Credentials
 3. Create messages (Dont forget header x-key)
 
-**Observation:** Looking the signature messages in response.
+> **Observation:** Looking the signature messages in response.
