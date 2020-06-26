@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  backend-master-test:
+    build: .
+    container_name: backend-master-test
+    tty: true
+    working_dir: '/home/backend-master-test'
+    volumes:
+      - ".:/home/backend-master-test"
+    command: > 
+      bash -c "npm install
+      && npm run test"
+    ports:
+      - ${PORT}:${PORT}

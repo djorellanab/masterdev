@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  backend-master-dev:
+    build: .
+    container_name: backend-master-dev
+    tty: true
+    working_dir: '/home/backend-master-dev'
+    volumes:
+      - ".:/home/backend-master-dev"
+    command: > 
+      bash -c "npm install
+      && npm run start"
+    ports:
+      - ${PORT}:${PORT}

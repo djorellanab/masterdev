@@ -1,0 +1,9 @@
+node_modules
+.ionide/symbolCache.db
+.env
+
+reports/*
+!reports/.gitkeep
+
+data/postgresql/*
+!data/postgresql/.gitkeep
