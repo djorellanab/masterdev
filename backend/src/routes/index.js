@@ -1,3 +1,6 @@
 module.exports = {
-    HomeRoutes:  require('./home.routes')
-}
+    CredentialRoutes: require('./credential.routes'),
+    MessageRoutes: require('./message.routes'),
+    HomeRoutes:  require('./home.routes'),
+    TagRoutes: require('./tag.routes')
+};

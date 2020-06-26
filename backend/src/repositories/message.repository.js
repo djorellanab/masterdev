@@ -1,11 +1,14 @@
-let messages = []; 
+const uuid = require('uuid-random');
+
+const messages = container.resolve('Storage').Messages;
+
 class MessageRepository {
 
-    hello() {
-        return {
-          message: 'Hello World!'
-        };
-      }
+  add(message){
+    let id = uuid();
+    messages[id] = message;
+    return id;
+  }
 }
 
 
