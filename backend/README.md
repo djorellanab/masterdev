@@ -32,7 +32,7 @@ $ nvm use
 2. Install dependencies
 ``` shell
 $ npm install
-
+```
 
 ### Config your Environment variables
 > This project use `dotenv` then you have to copy `.env.example` file and rename as `.env` next, you have to set the environment varibles for your case as you required
