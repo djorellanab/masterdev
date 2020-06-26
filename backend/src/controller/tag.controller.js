@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 let _tagService = null;
 
 class TagController {
@@ -24,7 +25,7 @@ class TagController {
         return next({ status: 422, message: errors.array() });  
       try {
         let tags = await _tagService.getAll();
-        return res.status(201).send(tags);
+        return res.status(201).json(tags);
       } catch (error) {
         return res.status(500).send(error.message); 
       }

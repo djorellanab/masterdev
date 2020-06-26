@@ -2,7 +2,7 @@ const objectMapper = require('object-mapper');
 
 function credentialToDb(credential) {
     let map = {
-      'shared_secret ': 'shared_secret ',
+      'shared_secret': 'shared_secret',
       'key': 'key'
     };
     return objectMapper(credential, map);
@@ -10,7 +10,7 @@ function credentialToDb(credential) {
 
 function dbToCredential(db) {
     let map = {
-      'shared_secret ': 'shared_secret ',
+      'shared_secret': 'shared_secret',
       'key': 'key'
     };
     return objectMapper(db, map);

@@ -6,12 +6,16 @@ const tags = Storage.Tags;
 class TagRepository {
 
   async post(tag){
-    let id = uuid();
-    tags[id] = tag;
+    tags[Storage.CountTag] = tag;
+    Storage.CountTag++;
   }
   
   async getAll(){
-    return tags;
+    let db =[];
+    for (var key in tags) {
+      db.push({id:key, name: tags[key].name})
+    }
+    return db;
   }
 }
 

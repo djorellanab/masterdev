@@ -19,7 +19,9 @@ class CredentialController {
         if(error.message == 'FORBIDDEN')
           return res.status(403).send('FORBIDDEN')
         else
+        {
           return res.status(500).send(error.message)
+        }
       }
     }
   }

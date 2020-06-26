@@ -11,8 +11,7 @@ class MessageService {
     }
 
     async getAllByTag(tag) {
-      let tags = await _messageRepository.getAllByTag(tag);
-      return await messageMapping.dbToMessage(tags);
+      return await _messageRepository.getAllByTag(tag);
     }
 
     async post(body) {

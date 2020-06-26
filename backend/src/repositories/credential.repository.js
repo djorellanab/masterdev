@@ -5,9 +5,9 @@ const keys = Storage.Keys;
 
 class CredentialRepository {
     put(credential) {
-        if(!Keys[credential.key])
+        if(keys[credential.key])
           throw  Error('FORBIDDEN');
-        Keys[credential.key] = credential.shared_secret;
+        keys[credential.key] = credential.shared_secret;
       }
 }
 

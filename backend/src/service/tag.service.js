@@ -11,8 +11,8 @@ class TagService {
     }
 
   async getAll() {
-      const db = await tagMapping.getAll();
-      return await tagMapping.dbToTag(db);
+      const db = await _tagRepository.getAll();
+      return await db;
     }
 }
   

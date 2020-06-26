@@ -5,7 +5,7 @@ const postValidator = [
         .isString().withMessage('key must be string')
         .notEmpty().withMessage('key must not be empty'),
     body('tags')
-        .custom((tags) =>{ 
+        .custom((tags) =>{  
             if(!Array.isArray(tags))
                 return Promise.reject('tags must be array');
             if(tags.length < 1)
@@ -15,12 +15,13 @@ const postValidator = [
                 if(!Number.isInteger(tag))
                     return Promise.reject('all tags must be integer');
             }
+            return true;
         })
     ];
 
 const getIdValidator = [
     param('id')
-    .isUUID().withMessage('Id must be anuuid')
+    .isNumeric().withMessage('Id must be number')
 ];
 
 const getTagValidator = [
