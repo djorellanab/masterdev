@@ -1,4 +1,5 @@
 module.exports = {
     Keys: [],
-    Messages: []
+    Messages: [],
+    Tags: []
 }

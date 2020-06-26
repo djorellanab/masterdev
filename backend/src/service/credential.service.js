@@ -1,4 +1,4 @@
-const {credentialToDb} =  require('./mapping/credential.maping');
+const {credentialMapping} =  require('./mapping');
 
 let _credentialRepository = null;
 
@@ -6,9 +6,9 @@ class CredentialService {
   constructor({ CredentialRepository }) {
     _credentialRepository = CredentialRepository;
   }
-    put(body) {
-        let credential = credentialToDb(body);
-        return _credentialRepository.put(credential);
+    async put(body) {
+        let credential = credentialMapping.credentialToDb(body);
+        await _credentialRepository.put(credential);
     }
   }
   

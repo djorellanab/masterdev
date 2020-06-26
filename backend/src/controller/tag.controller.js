@@ -6,8 +6,28 @@ class TagController {
       _tagService = TagService;
     }
   
-    index(req, res) {
-      return res.send(_tagService.index());
+    async post(req, res, next) {
+      const errors = validationResult(req);
+      if (!errors.isEmpty())
+        return next({ status: 422, message: errors.array() });  
+      try {
+        await _tagService.post(req.body);
+        return res.status(201).send({message:"okay"});
+      } catch (error) {
+        return res.status(500).send(error.message); 
+      }
+    }
+
+    async getAll(req, res, next) {
+      const errors = validationResult(req);
+      if (!errors.isEmpty())
+        return next({ status: 422, message: errors.array() });  
+      try {
+        let tags = await _tagService.getAll();
+        return res.status(201).send(tags);
+      } catch (error) {
+        return res.status(500).send(error.message); 
+      }
     }
   }
   

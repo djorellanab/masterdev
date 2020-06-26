@@ -1,4 +1,6 @@
-let _homeService = null;
+const { validationResult } = require('express-validator');
+
+let _credentialService = null;
 
 class CredentialController {
 
@@ -6,10 +8,13 @@ class CredentialController {
       _credentialService = CredentialService;
     }
   
-    async put(req, res) {
+    async put(req, res, next) {
+      const errors = validationResult(req);
+      if (!errors.isEmpty())
+        return next({ status: 422, message: errors.array() });  
       try {
         await _credentialService.put(req.body);
-        return res.status(204).send('');
+        return res.status(204).send({message:"ok"});
       } catch (error) {
         if(error.message == 'FORBIDDEN')
           return res.status(403).send('FORBIDDEN')
